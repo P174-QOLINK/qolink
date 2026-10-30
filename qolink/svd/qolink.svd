@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+  <name>QOLINK_DEV</name>
+  <version>0.1</version>
+  <description>QOLink Initial 1-Byte Transfer Register Map</description>
+  <width>32</width>
+  <peripherals>
+    <peripheral>
+      <name>QOLINK</name>
+      <description>QOLink Point-to-Point Communication Peripheral</description>
+      <baseAddress>0xFFF60000</baseAddress>
+      <addressBlock>
+        <offset>0x0</offset>
+        <size>0x8</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <!-- Register 1: CTRL -->
+        <register>
+          <name>CTRL</name>
+          <description>Control and Status Register</description>
+          <addressOffset>0x00</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>EN</name>
+              <description>Enable QOLink Peripheral</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>TX_FULL</name>
+              <description>Transmit Buffer Full Flag</description>
+              <bitOffset>1</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+            <field>
+              <name>RX_AVAIL</name>
+              <description>Receive Byte Available Flag</description>
+              <bitOffset>2</bitOffset>
+              <bitWidth>1</bitWidth>
+            </field>
+          </fields>
+        </register>
+        <!-- Register 2: DATA -->
+        <register>
+          <name>DATA</name>
+          <description>Transmit and Receive 1-Byte Data Register</description>
+          <addressOffset>0x04</addressOffset>
+          <size>32</size>
+          <access>read-write</access>
+          <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>BYTE</name>
+              <description>TX/RX 8-bit Data Field</description>
+              <bitOffset>0</bitOffset>
+              <bitWidth>8</bitWidth>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+  </peripherals>
+</device>

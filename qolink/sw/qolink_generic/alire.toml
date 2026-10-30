@@ -1,0 +1,9 @@
+name = "qolink_generic"
+description = ""
+version = "0.1.0-dev"
+
+authors = ["ItsAskingForMyFullName"]
+maintainers = ["ItsAskingForMyFullName <example@example.com>"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
