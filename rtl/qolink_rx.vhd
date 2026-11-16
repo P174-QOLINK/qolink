@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use work.qolink_pkg.all;
 
-entity receiver is
+entity qolink_rx is
     generic (
         CLKS_PER_BIT : positive := 16;     -- must match the transmitter
         MAX_PAYLOAD  : natural  := 2047    -- bytes; frames claiming more are dropped
@@ -56,9 +56,9 @@ entity receiver is
         frame_error : out std_logic;
         error_cnt   : out unsigned(15 downto 0)
     );
-end receiver;
+end qolink_rx;
 
-architecture fsm of receiver is
+architecture fsm of qolink_rx is
     type state is (hunt, rx_header, rx_payload, rx_crc);
     signal current_state : state := hunt;
 

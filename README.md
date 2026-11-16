@@ -10,10 +10,10 @@ as a submodule.
 ```
 docs/       QOLINK-DESIGN.md (design notes), qolink_stack.svg
 rtl/        qolink_pkg.vhd      shared constants and CRC-16
-            qolink_tx.vhd       transmitter framer (entity TransmitterBoard)
-            qolink_rx.vhd       receiver deframer  (entity receiver)
+            qolink_tx.vhd       transmitter framer
+            qolink_rx.vhd       receiver deframer
             qolink_phy_rx.vhd   async PHY receiver
-tb/         testbenches (none yet)
+tb/         qolink_tx_tb.vhd (stale, see the note at its top)
 sim/        simulation run script (none yet)
 svd/        qolink.svd, the register map and single source for the driver
 sw/qolink/  Ada driver crate (Alire crate name: qolink_generic)
@@ -24,4 +24,4 @@ sw/qolink/  Ada driver crate (Alire crate name: qolink_generic)
 - `rtl/qolink_phy_tx.vhd`: instantiated by `qolink_tx.vhd`, so the transmitter
   does not elaborate without it
 - `rtl/qolink_xbus.vhd`: XBUS slave and register file
-- testbenches under `tb/` and a run script under `sim/`
+- a working testbench under `tb/` and a run script under `sim/`
