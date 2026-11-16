@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Engineers: Moneeb, Elias  (revised for two-board operation)
--- Module Name: TransmitterBoard
+-- Module Name: qolink_tx
 --
 -- Same frame and same FSM idea as the original (Idle -> header -> payload ->
 -- CRC), with these changes so the receiver on the other board can follow it:
@@ -27,7 +27,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use work.qolink_pkg.all;
 
-entity TransmitterBoard is
+entity qolink_tx is
     generic (
         CLKS_PER_BIT : positive := 16      -- must match the receiver
     );
@@ -49,9 +49,9 @@ entity TransmitterBoard is
         payloadData         : in  STD_LOGIC_VECTOR(7 downto 0);
         nextBytePayloadData : out STD_LOGIC
     );
-end TransmitterBoard;
+end qolink_tx;
 
-architecture Behavioral of TransmitterBoard is
+architecture Behavioral of qolink_tx is
     type stateType is (Idle, SendSync, SendHeader, SendPayload, SendCRC);
     signal state : stateType := Idle;
 
